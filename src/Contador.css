@@ -1,0 +1,8 @@
+.mybutton{
+    display: flex;
+    gap: 5px;
+}
+
+button{
+    height: 25px;
+}
