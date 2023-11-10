@@ -14,6 +14,7 @@
 .a{
     display: flex;
     gap: 5px;
+    justify-content: center;
 }
 
 button{
@@ -30,7 +31,7 @@ button{
 .total{
     display: flex;
     flex-direction: column;
-    width: 135px;
+    width: 200px;
     align-items: center;
 }
 
@@ -45,3 +46,28 @@ p{
     border: 1px solid black;
     border-radius: 5px;
 }
+
+.top{
+    display: flex;
+    height: 30px;
+    align-items: center;
+    padding-bottom: 15px;    
+}
+
+.top h3{
+    padding-left: 60px;
+}
+
+h3{
+    margin-top: -5px;
+    margin-bottom: -5px;
+    display: flex;
+    justify-content: center;
+}
+
+.reset button{
+    padding: 0;
+    border: none;
+    background: none;
+    padding-left: 60px;
+    }

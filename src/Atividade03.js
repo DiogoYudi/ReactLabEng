@@ -4,6 +4,8 @@ import { Profile } from "./Gallery";
 import Avatar from "./Avatar";
 import Card from "./utils";
 import PackingList from "./PackingList";
+import List from "./List";
+import Cup from "./Cup";
 
 export default function Atividade03(){
     return(
@@ -13,6 +15,8 @@ export default function Atividade03(){
             <Gallery />
             <Card />
             <PackingList />
+            <List />
+            <Cup />
             <Link to="/">Voltar</Link>
         </>
     )
