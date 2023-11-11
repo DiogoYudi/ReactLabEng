@@ -44,6 +44,8 @@ export default function Cards(){
     }
 
     function handleClick(id){
+        if(items[id].stat=="active" || items[id].stat=="correct")
+            return;
         if(prev === -1){
             items[id].stat = "active";
             setItems([...items])
@@ -55,7 +57,7 @@ export default function Cards(){
     }
 
     return (
-        <div class="container">
+        <div className="container">
             { items.map((item, index) => (
                 <Card key={index} item={item} id={index} handleClick={handleClick} />
             ))}
