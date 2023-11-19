@@ -1,74 +1,109 @@
 import React, { useState } from "react";
+import MyButton from "./Button";
 
 export default function Calculator(){
-    let [n, setN] = useState(0);
+    let [n, setN] = useState('');
     let [n1, setN1] = useState(0);
-    let [t, setT] = useState("+");
+    let [aux, setAux] = useState(0);
+    let [operator, setOp] = useState(false);
 
-    function Math(n1, t){
-        let result;
-        setN1(n1);
-        setT(t);
-        if(t=="+"){
-            result=n+n1;
-            setN(result);
+    function addDigits(d){
+        setN1('');
+        if((d=="+" || d=="-" || d=="*" || d=="/" || d=="%")&&operator){
+            setOp(false);
+            setN(n1+d);
+            return;
         }
-        if(t=="-"){
-            result=n-n1;
-            setN(result);
+        if(operator){
+            setN(d);
+            setAux(d);
+            setOp(false);
+            return;
         }
-        if(t=="="){
-            result = n;
-            setN(result);
+        let n2=n+d;
+        setN(n2);
+    }
+
+    function Clean(){
+        setN(n.replace(/\d$/, ''));
+        setOp(false);
+        setN1("");
+        return;
+    }
+
+    function Delete(){
+        setN('');
+        setN1(0);
+        setAux(0);
+        setOp(false);
+    }
+
+    function Operator(){
+        try{
+            let r = eval(n);
+            setAux(r);
+            setN1("="+r);
+            setOp(true);
+        } catch{
+            setN('Error');
         }
     }
+
+    function PlusMinus(){
+        setN(n*-1);
+    }
+
+    function Percent(){
+        let p = parseFloat(n);
+        setN((p/100).toString());
+    }
+
     return(
         <div className="tela">
             <div className="result">
-                <h3 id="res">{n}</h3>
+                <div class="n">
+                    {n}
+                    {n1}
+                </div> 
             </div>
-            <div className="teclas">
-                <MyButton n={n} n1={1} t={t} onClick={() => Math(1, t)}/>
-                <MyButton n={n} n1={2} t={t} onClick={() => Math(2, t)}/>
-                <MyButton n={n} n1={"-"} t={"-"} onClick={() => Math(0, "-")}/>
-                <MyButton n={n} n1={"="} t={"="} onClick={() => Math(0, "=")}/>
+            <div className="teclado">
+                <div className="gray">
+                    <MyButton n={"AC"} onClick={() => Clean()}/>
+                </div>
+                <div className="gray">
+                    <MyButton n={"C"} onClick={() => Delete()}/>
+                </div>
+                <div className="gray">
+                    <MyButton n={"%"} onClick={() => Percent("%")}/>
+                </div>
+                <div className="orange">
+                    <MyButton n={"/"} onClick={() => addDigits("/")}/>
+                </div>
+                <MyButton n={"7"} onClick={() => addDigits("7")}/>
+                <MyButton n={"8"} onClick={() => addDigits("8")}/>
+                <MyButton n={"9"} onClick={() => addDigits("9")}/>
+                <div className="orange">
+                    <MyButton n={"*"} onClick={() => addDigits("*")}/>
+                </div>
+                <MyButton n={"4"} onClick={() => addDigits("4")}/>
+                <MyButton n={"5"} onClick={() => addDigits("5")}/>
+                <MyButton n={"6"} onClick={() => addDigits("6")}/>
+                <div className="orange">
+                <MyButton n={"-"} onClick={() => addDigits("-")}/>
+                </div>
+                <MyButton n={"1"} onClick={() => addDigits("1")}/>
+                <MyButton n={"2"} onClick={() => addDigits("2")}/>
+                <MyButton n={"3"} onClick={() => addDigits("3")}/>
+                <div className="orange">
+                <MyButton n={"+"} onClick={() => addDigits("+")}/>
+                </div>
+                <MyButton n={"+/-"} onClick={() => PlusMinus()}/>
+                <MyButton n={"0"} onClick={() => addDigits("0")}/>
+                <MyButton n={","} onClick={() => addDigits(".")}/>
+                <div className="orange">
+                <MyButton n={"="} onClick={() => Operator()}/>
+                </div>
             </div>
         </div>
     );
-}
-
-function MyButton({n1, t, onClick}){
-    if(t == "+" || t=="-" || t=="*" || t=="/"){
-        return (
-            <>
-                <div class="button">
-                    <button onClick={onClick}>
-                        {n1}
-                    </button>
-                </div>
-            </>
-        );
-    }
-    if(t == "-"){
-        return (
-            <>
-                <div class="button">
-                    <button onClick={onClick}>
-                        {n1}
-                    </button>
-                </div>
-            </>
-        );
-    }
-    if(t == "="){
-        return (
-            <>
-                <div class="button">
-                    <button onClick={onClick}>
-                        {n1}
-                    </button>
-                </div>
-            </>
-        );
-    }
 }

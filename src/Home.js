@@ -7,13 +7,13 @@ const Home = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/Atividade01">Atividade 1 - Relógio e Letreiro</Link>
+                        <Link to="/Atividade1/Atividade01">Atividade 1 - Relógio e Letreiro</Link>
                     </li>
                     <li>
-                        <Link to="/Atividade02">Atividade 2 - Contador</Link>
+                        <Link to="/Atividade2/Atividade02">Atividade 2 - Contador</Link>
                     </li>
                     <li>
-                        <Link to="/Atividade03">Atividade 3 - Componentes</Link>
+                        <Link to="/Atividade3/Atividade03">Atividade 3 - Componentes</Link>
                     </li>
                     <li>
                         <Link to="/MemoryGame/Game">Memory Game</Link>

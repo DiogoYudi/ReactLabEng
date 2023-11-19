@@ -1,4 +1,5 @@
 import Calculator from "./components/Calculator";
+import './indexCalc.css';
 
 export default function Calc(){
     return(
