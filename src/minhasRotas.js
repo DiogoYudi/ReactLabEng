@@ -6,6 +6,7 @@ import Atividade02 from "./Atividade2/Atividade02";
 import Atividade03 from "./Atividade3/Atividade03";
 import Game from "./MemoryGame/Game";
 import Calc from "./Calculator/Calc";
+import Gm from "./MemoryGame2/Gm";
 
 export default function MinhasRotas(){
     return(
@@ -17,6 +18,7 @@ export default function MinhasRotas(){
                 <Route path="/Atividade3/Atividade03" element={<Atividade03 />}/>
                 <Route path="/MemoryGame/Game" element={<Game />}/>
                 <Route path="/Calculator/Calc" element={<Calc />}/>
+                <Route path="/MemoryGame2/Gm" element={<Gm />}/>
             </Routes>
         </BrowserRouter>
     );

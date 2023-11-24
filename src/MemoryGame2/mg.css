@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cardpp {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  user-select: none;
+  perspective: 1000px;
+  transition: transform 0.5s;
+}
+
+.cardpp:hover {
+  transform: scale(1.05);
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+img{
+  width: 30px;
+  height: 30px;
+}
+
+.cardpp.correct{
+  background-color: green;
+}

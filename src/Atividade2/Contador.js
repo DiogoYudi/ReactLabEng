@@ -44,14 +44,14 @@ function Contador(){
                             height: 90
                         }}
                     />
-                    <div class="a">
+                    <div className="a">
                         <MyButton count={c} s={"+"} onClick={handleClickH}/>
                         <MyButton count={c} s={"-"} onClick={handleClickHM}/>
                     </div>
                     <h3>Homens</h3>
                     <p>{c}</p>
                 </div>
-                <div class="mybutton">
+                <div className="mybutton">
                     <img
                         className="Woman"
                         src="https://i.imgur.com/gJZm1fs.png"
@@ -60,7 +60,7 @@ function Contador(){
                             height: 90
                         }}
                     />
-                    <div class="a">
+                    <div className="a">
                         <MyButton count={c1} s={"+"} onClick={handleClickM}/>
                         <MyButton count={c1} s={"-"} onClick={handleClickMM}/>
                     </div>
@@ -73,11 +73,18 @@ function Contador(){
 }
 
 function MyButton({count, s, onClick}){
+    let cssbutton={
+        width: 25,
+        height: 25,
+        border: 'none',
+        backgroundColor: '#fff',
+        borderRadius: 40,
+    }
     if(s == "+"){
         return (
             <>
-                <div class="button">
-                    <button onClick={onClick}>
+                <div className="button1">
+                    <button style={cssbutton} onClick={onClick}>
                         +
                     </button>
                 </div>
@@ -87,8 +94,8 @@ function MyButton({count, s, onClick}){
     if(s == "-"){
         return (
             <>
-                <div class="button">
-                    <button onClick={onClick}>
+                <div class="button1">
+                    <button style={cssbutton} onClick={onClick}>
                         -
                     </button>
                 </div>

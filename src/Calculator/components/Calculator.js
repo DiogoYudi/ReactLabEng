@@ -27,7 +27,7 @@ export default function Calculator(){
     function Clean(){
         setN(n.replace(/\d$/, ''));
         setOp(false);
-        setN1("");
+        setN1(0);
         return;
     }
 

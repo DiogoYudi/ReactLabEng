@@ -1,7 +1,7 @@
 export default function MyButton({n, onClick}){
     return (
         <>
-            <div class="button">
+            <div className="but">
                 <button onClick={onClick}>
                     {n}
                 </button>

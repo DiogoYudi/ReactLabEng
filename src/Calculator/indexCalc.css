@@ -19,14 +19,13 @@
     color: white;
     font-size: 2em;
     width: 100%;
-    height: 60px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     font-size: 50px;
 }
 
-.button{
+.but{
     font-size:1em;
     height: 65px;
     border:1px solid black;
@@ -35,12 +34,13 @@
     justify-content: center;
 }
 
-.button button{
+.but button{
     border: 0;
     width: 60px;
     height: 60px;
     background-color: #383838;
     color: #fff;
+    border-radius: 50%;
 }
 
 .orange button{
@@ -50,6 +50,6 @@
 .gray button{
     background-color: #777;
 }
-.button button:hover{
+.but button:hover{
     background-color: orangered;
 }
